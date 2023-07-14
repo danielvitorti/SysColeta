@@ -142,7 +142,17 @@ $rotaFinalizada = ((int)$dadosRota['Status'] < 4) ? false : true;
                                                     <div class="card-body">
                                                         Coletado
                                                         <input required type="text" onkeyup="somenteNumeros(this);" <?php if ($rotaFinalizada) : ?> disabled <?php endif; ?> name="QuantidadeColetada[<?= $indCliente ?>]" value="<?= $value["QuantidadeColetada"] ?>" id="QuantidadeColetada" class="form-control" />
-                                                        <small><i>Litros</i></small>
+                                                        <!--<small><i>Litros</i></small> -->
+                                                        <small>
+                                                            <br />
+                                                            <select  name="TipoColetado[<?= $indCliente ?>]" id="TipoColetado" <?php if ($rotaFinalizada) : ?> disabled <?php endif; ?>>
+                                                            <option value=""></option>
+                                                            <option value="1" <?php if($value['tipoColetado'] == 1): ?> selected="selected" <?php endif;?>> Oleo vegetal usado</option>
+                                                            <option value="2" <?php if($value['tipoColetado'] == 2): ?> selected="selected" <?php endif;?>> Oleo mineral usado</option>
+                                                            <option value="3" <?php if($value['tipoColetado'] == 3): ?> selected="selected" <?php endif;?>> Metal - Aluminio</option>
+                                                            <option value="4" <?php if($value['tipoColetado'] == 4): ?> selected="selected" <?php endif;?>> Metal - Aço</option>
+                                                            <option value="5" <?php if($value['tipoColetado'] == 5): ?> selected="selected" <?php endif;?>> Metal - Cobre</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </td>

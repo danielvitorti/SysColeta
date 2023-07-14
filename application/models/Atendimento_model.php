@@ -10,6 +10,8 @@ class Atendimento_model extends CI_Model
     public $Status;
     public $DataCadastro;
     public $IdCliente;
+    public $Excluido;
+    public $TipoColetado;
     
 
     public function __construct() 

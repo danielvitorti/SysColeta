@@ -348,6 +348,7 @@ class Rota extends CI_Controller
 
         $data['dadosRota'] = $this->VwRotaMotorista_model->buscarPorId()->row_array();
         
+        
         $data['clientesRota'] = $this->VwRotaClienteMotorista_model->buscarPorRota()->result_array();
         
         $this->Atendimento_model->IdRota = $IdRota;
@@ -366,6 +367,7 @@ class Rota extends CI_Controller
 
         $data['turnos'] = $turnos;       
         $data['content'] = $this->load->view('rota/visualizar', $data, true);
+        
         $this->load->view('master', $data);
     }
 
@@ -430,6 +432,7 @@ class Rota extends CI_Controller
                         $this->Atendimento_model->IdRota                = $IdRota;
                         $this->Atendimento_model->IdCliente             = $value;
                         $this->Atendimento_model->DataCadastro          = date('Y-m-d H:i:s');
+                        $this->Atendimento_model->TipoColetado          = $this->input->post('TipoColetado')[$i];
                 
                         $IdAtendimento = $this->Atendimento_model->inserir();
                         $indRecipiente = 0;
